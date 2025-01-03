@@ -1,10 +1,16 @@
-## Map:
+# Javascript Nuggets - Map
 
-- map <ins>**always**</ins> returns a new array
-- <ins>**doesn't change**</ins> the size of the original array (unlike filter)
-- <ins>**Uses**</ins> values from original array while making a new one 
+
+👉 [Watch on Youtube](https://youtu.be/80KX6aD9R7M?si=GG5s4eRZxwXnnyDb)
+
+---
+
+- what makes map so special is the fact that as we're iterating over the original array, essentially we can return whatever we would want.
+- map returns a new array even if it's just an empty array then it does not change the size of the original array unlike the filter method and it always uses the values from the original array when making a new one
+
 
 ```js
+// I want to iterate over people array and just grab the age
 const people = [
     {
         name:'Saiteja',
