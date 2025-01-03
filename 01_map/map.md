@@ -4,13 +4,14 @@
 👉 [Watch on Youtube](https://youtu.be/80KX6aD9R7M?si=GG5s4eRZxwXnnyDb)
 
 ---
-
-- what makes map so special is the fact that as we're iterating over the original array, essentially we can return whatever we would want.
-- map returns a new array even if it's just an empty array then it does not change the size of the original array unlike the filter method and it always uses the values from the original array when making a new one
+- map <ins>**returns a new array**</ins> even if it's just an empty array 
+- then it **does not change the `size` of the original array** unlike the filter method 
+- it always **uses the values from the `original` array** when making a new one
+- what makes map so special is the fact that as we're iterating over the original array, essentially **we can <ins>return whatever we would want**</ins>.
 
 
 ```js
-// I want to iterate over people array and just grab the age
+// Original Array
 const people = [
     {
         name:'Saiteja',
@@ -48,21 +49,23 @@ console.log(ages) // [undefined, undefined, undefined]
 
 ---
 
-### Deep Dive:
+### <ins>Deep Dive</ins>:
 
-#### i) Importance of return keyword in map
+#### i) Importance of `return` keyword in map
 ```js
-// we can define any param in the callback function while iterating over original array (ex: orange, person, department, item)
+// we can define any param in the callback function while iterating over original array instead of person
+// ex: orange, person, department, item
 
 const ages = people.map((person)=>{
     console.log(person);
     return 'hello world'
 })
 console.log(ages) // [hello world, hello world, hello world]
+// As we are returning hello world, that is the same thing printed on the console for all the array of object items.
 ```
 
 ```js
-// return the item defined in callback function
+// return the "param" defined in callback function
 const ages = people.map((person) => {
   return person;
 });
@@ -75,18 +78,19 @@ console.log(ages); // this will print the same array of objects defined in the o
 const ages = people.map((person) =>  person);
 console.log(ages); // this will print the same array of objects defined in the original array
 ```
-### Example output for above: 
+#### <ins>Example output for above:</ins> 
 <img src="./imagesUsed/map-1.png">
 
 ----
 
-#### ii) Replacing Callback function with a function
+### ii) Replacing Callback function with a function
 
 ```js
 const getAges = (person)=> person.age
 ```
 
 ```js
+// const ages = people.map((person)=>person.age)
 const ages = people.map(getAges);
 console.log(ages); // [28, 31 , 23]
 ```
@@ -96,6 +100,7 @@ console.log(ages); // [28, 31 , 23]
 ### iii) Return an object
 
 ```js
+// constructing an object and return an object
 const newPeople = people.map((item) => {
   return {
     firstName: item.name,
