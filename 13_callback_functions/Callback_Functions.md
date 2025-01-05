@@ -10,7 +10,7 @@
   - Why they're important.
   - How they work.
 
-A **callback function** is a function that we pass in as an argument and execute it later.
+> A **callback function** is a function that we pass in as an argument and execute it later.
 
 Assume you're comfortable with this code:
 
@@ -61,7 +61,7 @@ handleName("peter", makeUppercase);
 function reverseString(value) {
     console.log(value.split("").reverse().join(""));
 }
-handleName("peter", reverseString);
+handleName("Peter", reverseString);
 ```
 
 Output: `htimS reteP`
@@ -85,7 +85,7 @@ handleName("susan", function(value) {
 #### Arrow Function Example:
 
 ```javascript
-handleName("susan", (value) => console.log(value));
+handleName("Susan", (value) => console.log(value));
 ```
 
 Output: `Susan Smith`
