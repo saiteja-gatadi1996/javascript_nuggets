@@ -6,10 +6,17 @@
   - **Definition**: A faster or easier way to access/unpack variables from arrays or objects.
 - **Key Use Cases**:
   - Unpacking variables from arrays or objects.
-  - Passing objects in function parameters (covered in future videos).
+  - Passing objects in function parameters (will be covered as part of REST & SPREAD operators).
 
 ### **Accessing Array Items**
 - **Scenario**: Two arrays, `fruits` and `friends`.
+
+```js
+const fruits = ['orange', 'banana', 'lemon'];
+
+const friends = ['john', 'peter', 'bob', 'anna', 'kelly'];
+```
+
 - Traditional way to access array elements:
   ```javascript
   const fruit1 = fruits[0];
@@ -25,7 +32,7 @@
 - **Example**:
   ```javascript
   const [john] = friends;
-  console.log(john); // Outputs: "John"
+  console.log(john); // Outputs: "john"
   ```
   - Adds simplicity compared to traditional methods.
   - Allows naming variables dynamically.
@@ -34,7 +41,7 @@
 - Access all items:
   ```javascript
   const [john, peter, bob, anna, kelly] = friends;
-  console.log(john, peter, bob, anna, kelly);
+  console.log(john, peter, bob, anna, kelly); // john peter bob anna kelly
   ```
 - Omitting some values:
   ```javascript
@@ -52,15 +59,17 @@
 ### **Dynamic Variable Names** 
 - Naming variables dynamically:
   ```javascript
+  // I changed the first value from john to enemy
   const [enemy] = friends;
-  console.log(enemy); // Outputs: "John"
+  console.log(enemy); // Outputs: "john"
   ```
 
 ### **Skipping Array Items** 
 - Skip items using commas:
   ```javascript
   const [john, , bob, , kelly] = friends;
-  console.log(john, bob, kelly);
+  // below logs based on the index position (ex: bob is at index 2nd, kelly at index 4th)
+  console.log(john, bob, kelly); // john bob kelly
   ```
 
 ### **Swapping Variables** 
