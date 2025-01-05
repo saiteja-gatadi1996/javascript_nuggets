@@ -48,6 +48,10 @@
     console.log(dimensions);
   });
   ```
+<img src="./imagesUsed/boundingRectClient.png">
+
+-----
+
 - Output on click:
   - **Properties logged**:
     - `top`: Distance from top of the screen to the top of the element.
