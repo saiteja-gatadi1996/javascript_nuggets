@@ -29,6 +29,32 @@ We’ll focus on returning an **object** from `reduce`.
   - `price` (cost of the item)
   - `amount` (number of items of the product).
 
+```js
+// cart example
+const cart = [
+  {
+    title: 'Samsung Galaxy S7',
+    price: 599.99,
+    amount: 1,
+  },
+  {
+    title: 'google pixel ',
+    price: 499.99,
+    amount: 2,
+  },
+  {
+    title: 'Xiaomi Redmi Note 2',
+    price: 699.99,
+    amount: 4,
+  },
+  {
+    title: 'Xiaomi Redmi Note 5',
+    price: 399.99,
+    amount: 3,
+  },
+]
+```
+
 - **Goal**: Use `reduce` to calculate:  
   1. **Total Items**  
   2. **Cart Total**
@@ -42,9 +68,28 @@ let total = cart.reduce((total, cartItem) => {
     // Define what we return: an object.
     return total;
 }, { totalItems: 0, cartTotal: 0 });
+console.log(total) // { totalItems: 0, cartTotal: 0 }
 ```
 
-- Always return the **total**.  
+```javascript
+//another example
+let total = cart.reduce((total, cartItem) => {
+    return total;
+}, {});
+
+console.log(total) // {}
+```
+
+```javascript
+//another example
+let total = cart.reduce((total, cartItem) => {
+    console.log(cartItem); // logs all the objects inside the original array
+    return total;
+}, { totalItems: 0, cartTotal: 0 });
+console.log(total) // { totalItems: 0, cartTotal: 0 }
+```
+
+- <ins>**Always return the**</ins> **`total`**.  
 - Set up parameters:  
   - `total` for accumulative results.  
   - `cartItem` for each object.
@@ -54,14 +99,56 @@ let total = cart.reduce((total, cartItem) => {
 ### **Updating Total Items and Cart Total**
 #### Updating Logic:
 ```javascript
+// we are destructuring the price and amount from the arrayItem (cartItem)
 const { price, amount } = cartItem;
+
+// count items
 total.totalItems += amount;
+
+// count sum
 total.cartTotal += amount * price;
+```
+
+
+```js
+// Full Logic with totalItems, cartTotal
+let total = cart.reduce((total, cartItem) => {
+
+const { price, amount } = cartItem;
+
+// count items
+total.totalItems += amount;
+
+// count sum
+total.cartTotal += amount * price;
+    return total;
+}, { totalItems: 0, cartTotal: 0 });
+
+console.log(total) // { totalItems: 10, cartTotal: 5599.900000000001 }
 ```
 
 #### Fixing Numbers:
 - Use `.toFixed(2)` to limit decimals.  
 - Convert result back to **number** with `parseFloat`.
+
+
+```js
+// Full Logic after applying .toFixed(2)
+let {totalItems, cartTotal} = cart.reduce((total, cartItem) => {
+
+const { price, amount } = cartItem;
+
+// count items
+total.totalItems += amount;
+
+// count sum
+total.cartTotal += amount * price;
+    return total;
+}, { totalItems: 0, cartTotal: 0 });
+
+cartTotal = parseFloat(cartTotal.toFixed(2));
+console.log(totalItems, cartTotal); //10, 5599.9
+```
 
 ---
 
@@ -70,8 +157,13 @@ total.cartTotal += amount * price;
 
 #### Fetching Data:
 ```javascript
-const response = await fetch(url);
-const data = await response.json();
+const url = 'https://api.github.com/users/john-smilga/repos?per_page=100';
+
+const fetchRepos = async()=>{
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data) // logs the api response
+}
 ```
 
 #### Reduce Example:
@@ -79,7 +171,7 @@ const data = await response.json();
 const languageCount = data.reduce((total, repo) => {
     const { language } = repo;
     if (language) {
-        total[language] = (total[language] || 0) + 1;
+        total[language] = total[language] + 1 || 1;
     }
     return total;
 }, {});
@@ -101,8 +193,6 @@ const languageCount = data.reduce((total, repo) => {
 2. Real-world applications:
    - Calculating cart totals in e-commerce.
    - Counting repository languages dynamically in GitHub projects.
-
-Enjoy coding with `reduce`!
 
 ---
 
