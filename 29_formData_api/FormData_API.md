@@ -12,15 +12,79 @@ The **FormData API** is a powerful interface to construct a set of **key-value p
 
 #### Typical Form Handling Without FormData:
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Nuggets</title>
+    <link rel="stylesheet" href="./local.css" />
+    <style></style>
+  </head>
+  <body>
+    <form class="form">
+      <h4>formData API</h4>
+      <!-- name -->
+      <div class="form-row">
+        <label class="form-label" for="name">name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-input name-input"
+        />
+      </div>
+      <!-- email -->
+      <div class="form-row">
+        <label class="form-label" for="email">email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-input email-input"
+        />
+      </div>
+      <!-- password -->
+      <div class="form-row">
+        <label class="form-label" for="password">password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-input password-input"
+        />
+      </div>
+      <button type="submit" class="btn btn-block">register</button>
+    </form>
+    <script src="./app.js"></script>
+  </body>
+</html>
+```
+
 ```javascript
 const form = document.querySelector('.form');
-const inputs = form.querySelectorAll('input');
+const nameInput = document.querySelector('.name-input');
+const emailInput = document.querySelector('.email-input');
+const passwordInput = document.querySelector('.password-input');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    inputs.forEach(input => {
-        console.log(input.value);
-    });
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const nameValue = nameInput.value;
+  const emailValue = emailInput.value;
+  const passwordValue = passwordInput.value;
+  // check for empty values
+  if (!nameValue || !emailValue || !passwordValue) {
+    console.log('please provide values');
+    return;
+  }
+  // do something
+  console.log(nameValue, emailValue, passwordValue);
+
+  // after that clear values
+  nameInput.value = '';
+  emailInput.value = '';
+  passwordInput.value = '';
 });
 ```
 
@@ -30,11 +94,14 @@ While effective, this becomes tedious for forms with many inputs.
 
 ```javascript
 const form = document.querySelector('.form');
+// also valid approach
+// const formData = new FormData(form);
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    console.log([...formData.entries()]);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.currentTarget);
+  // won't directly return values
+  console.log(formData);
 });
 ```
 
@@ -44,14 +111,14 @@ form.addEventListener('submit', (event) => {
 #### Accessing Values in FormData:
 
 ```javascript
-// Access entries (key-value pairs)
-console.log([...formData.entries()]);
 
-// Access values only
-console.log([...formData.values()]);
-
-// Access keys only
-console.log([...formData.keys()]);
+  // spread out - entries, values, keys
+  const entries = [...formData.entries()];
+  console.log(entries);
+  const values = [...formData.values()];
+  console.log(values);
+  const keys = [...formData.keys()];
+  console.log(keys);
 ```
 
 - Use `entries()`, `values()`, or `keys()` methods to retrieve data.
