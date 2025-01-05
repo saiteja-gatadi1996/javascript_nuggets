@@ -11,7 +11,7 @@ const person = {
 }
 person.age = 28;
 console.log(person.name) //saiteja
-console.log(person) 
+console.log(person) // { name: 'saiteja', age: 28 }
 ```
 
 
@@ -25,9 +25,14 @@ const items = {
 console.log(items.featured-items) // doesn't work
 
 console.log(items['featured-items']) // ['item1', 'item2']
+```
 
+```js
+// person is an object which has name as key
 console.log(person['name']) //saiteja
 ```
+
+
 
 ----
 
