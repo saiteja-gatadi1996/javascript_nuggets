@@ -1,11 +1,11 @@
 
 # JavaScript Nuggets: Optional Chaining
 
-[**YouTube Video Link**](https://www.youtube.com/watch?v=PuEGrylM1x8)
+[Watch on Youtube](https://www.youtube.com/watch?v=PuEGrylM1x8)
 
 ---
 
-**optional chaining**, which offers straightforward syntax for working with deeply nested properties.  
+**Optional chaining**, which offers straightforward syntax for working with deeply nested properties.  
 
 Imagine this scenario:  
 - You have an array.
@@ -13,6 +13,22 @@ Imagine this scenario:
 - Each object represents a person.
 
 **Properties:**  
+
+
+```js
+// Original Array
+const people = [
+  {
+    name: 'bob',
+    location: { street: '123 main street', timezone: { offset: '+7:00' } },
+  },
+  { name: 'peter', location: { street: '123 Pine street' } },
+  {
+    name: 'susan',
+    location: { street: '123 Apple street', timezone: { offset: '+9:00' } },
+  },
+]
+```
 - A person has a `name` property.  
 - A `location` property, which is an object.  
 - Inside `location`, there's a `timezone` property, which again is an object.  
