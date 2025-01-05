@@ -1,7 +1,7 @@
 
 # Javascript Nuggets - Spread Operator
 
-[YouTube Video Link](https://www.youtube.com/watch?v=4Zyr5a3m0Fc)
+[Watch on Youtube](https://www.youtube.com/watch?v=4Zyr5a3m0Fc)
 
 ---
 
@@ -30,11 +30,13 @@ console.log(letters); // ['u', 'd', 'e', 'm', 'y']
 **Example with Arrays**:
 
 You have:  
-- `boys = ["John", "Jake"]`  
-- `girls = ["Anna", "Kate"]`  
-- `bestFriend = "Arnold"`
 
-**Goal:** Combine these into a flat array.  
+```js
+const boys =  ["John", "Jake"];
+const girls = ["Anna", "Kate"];
+const bestFriend = "Arnold";
+```
+**Goal:** Combine these into a <ins>**flat**</ins> array.  
 **Problem:** Without the spread operator, arrays become nested.
 
 ```javascript
@@ -54,7 +56,7 @@ console.log(friends); // ['John', 'Jake', 'Arnold', 'Anna', 'Kate']
 
 **Copying Arrays Without Reference**:
 
-Problem: Referencing leads to unintended changes.
+**Problem**: **`Referencing`** leads to unintended changes.
 
 ```javascript
 const newFriends = friends;
