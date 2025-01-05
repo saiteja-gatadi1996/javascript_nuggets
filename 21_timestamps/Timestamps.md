@@ -1,26 +1,26 @@
 
 # JavaScript Nuggets - Timestamps
 
-**YouTube Video**: [JavaScript Nuggets - Timestamps](https://www.youtube.com/watch?v=-Sbd08tTbAA)
+ [Watch on Youtube](https://www.youtube.com/watch?v=-Sbd08tTbAA)
 
 - **Topic**: Timestamps.
   - Utilized while working on a Node project.
   - Realized its utility and decided to share it.
 - **Setup**:
-  - Using an extension called `qoca.js` to display logs in the document.
+  - Using an extension called `quokka.js` to display logs in the document.
 
 ### **Working with Date Objects** 
 - Running `new Date()` provides a lot of information:
   ```javascript
   const currentDate = new Date();
-  console.log(currentDate);
+  console.log(currentDate); // Logs today's day, date, time
   ```
 - **Unix Time**:
   - Measures time elapsed since midnight, January 1st, 1970 (in milliseconds).
   - Example: `Date.now()`.
   ```javascript
   const unixTime = Date.now();
-  console.log(unixTime);
+  console.log(unixTime); //logs current time in number format
   ```
 
 ### **Getting Timestamps** 
@@ -50,6 +50,16 @@
   }, 1000);
   ```
 
+```js
+// Output
+[
+  { id: 1736071483218, name: 'Peter' },
+  { id: 1736071484219, name: 'John' }
+]
+```
+
+---
+
 ### **Use Case 2: Creating Dates with Timestamps** 
 - Using timestamps to create specific dates:
   ```javascript
@@ -71,7 +81,7 @@
   const secondDate = new Date("2021-09-28");
   const diffInMilliseconds = secondDate.getTime() - firstDate.getTime();
   const diffInMinutes = diffInMilliseconds / (1000 * 60); // Convert to minutes
-  console.log(diffInMinutes);
+  console.log(diffInMinutes); //1440
   ```
 
 ### **Summary** 
@@ -81,5 +91,3 @@
   - Generating unique IDs.
 
 ---
-
-*Hope you found this video helpful. See you in the next one!*
