@@ -101,5 +101,3 @@ console.log(result); // ["All", "Apple", "Google"]
 ```
 
 ---
-
-*Hope you found this video helpful. See you in the next one!*
