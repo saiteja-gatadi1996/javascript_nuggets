@@ -2,9 +2,7 @@
 
 👉 [Watch on Youtube](https://youtu.be/yxT1lgupUrY?si=N1u8RhfGuyZTU94)
 
-```js
-- We are using Set to get unique values
-```
+> - We are using <ins>**Set**</ins> to get unique values
 
 ```js
 const menu = [
