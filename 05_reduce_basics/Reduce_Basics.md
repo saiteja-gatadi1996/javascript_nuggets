@@ -48,9 +48,10 @@ const staff = [
 
 ```js
 const dailyTotal = staff.reduce((total, person) => {
-  return total + person.salary;
+  return total += person.salary;
 }, 0);
 
+console.log(dailyTotal)
 // Output: 810
 ```
 
