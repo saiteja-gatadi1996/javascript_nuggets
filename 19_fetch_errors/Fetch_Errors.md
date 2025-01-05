@@ -1,7 +1,7 @@
 
 # JavaScript Nuggets: Fetch Errors
 
-[YouTube Video Link](https://www.youtube.com/watch?v=otrSJg1yeeo)
+[Watch on YouTube](https://www.youtube.com/watch?v=otrSJg1yeeo)
 
 ---
 
