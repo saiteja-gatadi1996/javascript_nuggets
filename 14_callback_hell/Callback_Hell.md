@@ -8,11 +8,28 @@
   - Callback functions are widely used and great for asynchronous operations.
   - However, promises and async/await make code easier to manage in some scenarios.
 - **Preview**:
-  - Promises will be tackled in the next video.
   - Callback hell occurs with asynchronous operations executed in sequence.
+
+----
+
 
 ### **Scenario** 
 - HTML setup:
+
+```html
+<body>
+    <h1>Callback Hell</h1>
+    <h2 class="first">hello world</h2>
+    <h2 class="second">hello people</h2>
+    <h2 class="third">hello javascript</h2>
+    <button class="btn">click me</button>
+    <script src="./app.js"></script>
+  </body>
+```
+
+
+
+
   - Three `<h2>` elements and a button.
   - Goal:
     - Click the button.
