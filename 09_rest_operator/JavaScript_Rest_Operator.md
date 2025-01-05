@@ -10,11 +10,15 @@
 ---
 
 ### Use Cases and Key Differences**
-- **Rest Operator**: 
-  - Used in destructuring and function declarations.
-- **Spread Operator**: 
-  - Used when invoking functions.
-- **Important Note:** Placement matters for the **Rest Operator**, and it should always be placed at the end.
+#### **Rest Operator**: Used in 
+  - **`destructuring`** 
+  -  **function `declarations`**.
+
+#### **Spread Operator**: 
+  - Used when **`invoking`** functions.
+
+
+> **Important Note:** Placement matters for the **Rest Operator**, and it should always be placed at the end.
 
 ---
 
@@ -55,7 +59,7 @@
   ```
 - **Key Points:**
   - The **Rest Operator** gathers remaining properties in objects.
-  - Always place the **Rest Operator** at the end:
+  - Always place the **`Rest Operator`** at the end:
     ```javascript
     const { job, ...rest } = person;
     ```
@@ -66,8 +70,8 @@
 - Declaring functions using the **Rest Operator**:
   ```javascript
   function getAverage(name, ...scores) {
-      console.log(name);
-      console.log(scores);
+      console.log(name); // Peter
+      console.log(scores); // [ 100, 90, 80 ]
       const average = scores.reduce((total, item) => total + item, 0) / scores.length;
       return average;
   }
@@ -82,9 +86,9 @@
 ### **Combining Rest and Spread Operators**
 - Example: Passing array values as individual arguments:
   ```javascript
-  const testScores = [23, 45, 67, 89];
+  const testScores = [100,90,80];
   const avg = getAverage("John", ...testScores);
-  console.log(avg); // Calculates average
+  console.log(avg); // Calculates average (ex: 90)
   ```
 - **Key Difference:**
   - **Rest Operator**: Used during declaration to gather items.
