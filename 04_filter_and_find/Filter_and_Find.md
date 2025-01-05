@@ -5,17 +5,6 @@
 
 ---
 
-```js
-const people = [
-  { name: 'bob', age: 20, position: 'developer' },
-  { name: 'peter', age: 25, position: 'designer' },
-  { name: 'susy', age: 30, position: 'the boss' },
-  { name: 'anna', age: 35, position: 'intern' },
-];
-```
-
-
-
 ## Filter 
   - Returns a new array.  
   - The size of the new array depends on conditions.  
@@ -31,6 +20,18 @@ const people = [
 
 ---
 
+```js
+// Original Array
+const people = [
+  { name: 'bob', age: 20, position: 'developer' },
+  { name: 'peter', age: 25, position: 'designer' },
+  { name: 'susy', age: 30, position: 'the boss' },
+  { name: 'anna', age: 35, position: 'intern' },
+];
+```
+
+---
+
 **Filtering Young People**  
 ```js
 const youngPeople = people.filter((person) => {
@@ -39,7 +40,7 @@ const youngPeople = people.filter((person) => {
   }
 });
 
-// Output: 
+// Output: We are filtering with people who are less than or equal to 25 age group
 [
   { name: 'bob', age: 20, position: 'developer' },
   { name: 'peter', age: 25, position: 'designer' }
@@ -68,6 +69,7 @@ const youngPeople = people.filter(person => person.age < 30);
 **Using Arrow Functions and Implicit Returns**  
 - Simplify the filter process:  
 ```js
+// filtering out the developer from original array
 const developers = people.filter(person => person.position === 'developer');
 
 //Output:
@@ -75,8 +77,8 @@ const developers = people.filter(person => person.position === 'developer');
 
 ```  
 **Notes:**  
-- Arrow functions can use implicit returns for cleaner code.  
-- Parameter names are arbitrary (e.g., `banana` instead of `person`).
+- Arrow functions can use **implicit `return`** for cleaner code.  
+- Parameter names are anything (e.g., `banana` instead of `person`).
 
 ---
 
@@ -93,7 +95,7 @@ const filtered = items.filter(item => item === 'orange');
 ---
 
 **Handling No Matches**  
-If no items match the condition:  
+- If no items match the condition:  
 ```js
 const seniorDevs = people.filter(person => person.position === 'senior');
 ```  
@@ -103,7 +105,7 @@ const seniorDevs = people.filter(person => person.position === 'senior');
 
 ## **Find Method**  
 - Works similarly to filter **but returns a single instance**.  
-- First match is returned; if no match, returns `undefined`.
+- <ins>**First match is returned**</ins>; if no match, returns `undefined`.
 
 ---
 
@@ -128,7 +130,7 @@ const lemon = fruits.find(fruit => fruit === 'lemon');
 ---
 
 **No Matches with Find**  
-If no match is found:  
+- If no match is found:  
 ```js
 const oldPerson = people.find(person => person.age > 35);
 ```  
@@ -137,7 +139,7 @@ const oldPerson = people.find(person => person.age > 35);
 ---
 
 **Handling Multiple Matches**  
-Find always returns the first match:  
+- ***Find always returns the first match:***  
 ```js
 const randomPerson = people.find(person => person.age < 35);
 
@@ -156,7 +158,9 @@ const peterPosition = peter.position;
 ```  
 - `Filter`: Results are always arrays, even with one match:  
 ```js
-const anna = people.filter(person => person.name === 'anna')[0].position;
+const anna = people.filter(person => person.name === 'anna');
+
+const annaPosition = anna[0].position;
 ```  
 ---
 
