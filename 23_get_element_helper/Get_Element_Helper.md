@@ -8,6 +8,19 @@
 
 **Scenario:**  
 - `index.html` contains:
+
+```html
+<body>
+    <h1>Get Element Helper</h1>
+    <h3 class="heading">random list</h3>
+    <ul>
+      <li class="list-item">first item</li>
+      <li class="list-item">second item</li>
+    </ul>
+    <script src="./app.js"></script>
+  </body>
+```
+
   - A heading with a `heading` class.
   - A list where each item has a `list-item` class.
 - **Goal:** Select the heading and list items.  
