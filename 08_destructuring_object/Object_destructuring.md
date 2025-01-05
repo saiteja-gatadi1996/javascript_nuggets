@@ -15,9 +15,30 @@
 
 ---
 
+```js
+// Main Object
+const bob = {
+  first: 'bob',
+  last: 'sanders',
+  city: 'chicago',
+  siblings: {
+    sister: 'jane',
+  },
+};
+
+// In our daily lives, we perform some operations like below
+
+const firstName = bob.first; //bob
+const lastName = bob.last; // sanders
+const sister = bob.siblings.sister; //jane
+```
+
+
+----
+
 - **Object Destructuring** reduces repetition and improves readability:
   1. Use a keyword (`const`, `let`).
-  2. Instead of square brackets (used in array destructuring), use curly braces for objects.
+  2. **Instead of `square` brackets (used in <ins>array destructuring</ins>), use `curly` braces for <ins>objects.</ins>**
   3. Example:
     ```javascript
     const { first, last, city } = bob;
@@ -32,7 +53,7 @@
 ---
 
 - **Order doesn't matter in object destructuring**:
-  - Arrays depend on order, but objects do not.
+  - **`Arrays` <ins>depend on order</ins>, but `objects` <ins>do not</ins>**.
   - Example:
     ```javascript
     const { last, first } = bob;
@@ -64,15 +85,29 @@
 
 ---
 
-- **Using destructuring in functions**:
-  - Example function:
-    ```javascript
-    function printPerson({ first, last, city, siblings: { sister } }) {
-      console.log(first, last, city, sister);
-    }
+### Inside Functions:
 
-    printPerson(bob); // Bob Sanders Chicago Jane
-    ```
+```js
+// In our daily lives, we do something like below
+
+function printPerson(person){
+  const {first, last} = person
+  console.log(first, last); // bob sanders
+}
+
+printPerson(bob) // bob is our Main Object
+```
+----
+
+**Using destructuring in functions**:
+
+```javascript
+function printPerson({ first, last, city, siblings: { sister } }) {
+    console.log(first, last, city, sister);
+}
+
+printPerson(bob); // bob sanders chicago jane
+```
 
   - Common in **React**:
     - Props are destructured directly in function parameters.
