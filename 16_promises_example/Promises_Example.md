@@ -8,6 +8,18 @@
 In this video, we are covering how to use promises to build a three-heading example.  
 
 **Setup in `index.html`:**  
+
+```js
+<body>
+    <h1>Promises</h1>
+    <h2 class="first">hello world</h2>
+    <h2 class="second">hello people</h2>
+    <h2 class="third">hello javascript</h2>
+    <button class="btn">click me</button>
+    <script src="./app.js"></script>
+</body>
+```
+
 - Three headings with classes.
 - A button to trigger the sequence.  
 
