@@ -1,6 +1,6 @@
 # Javascript Nuggets - Debounce
 
-[Watch on YouTube Video](https://www.youtube.com/watch?v=tYx6pXdvt1s)
+[Watch on YouTube](https://www.youtube.com/watch?v=tYx6pXdvt1s)
 
 **Introduction**
 
