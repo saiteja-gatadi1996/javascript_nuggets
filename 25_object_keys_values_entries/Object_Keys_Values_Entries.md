@@ -2,7 +2,6 @@
 
 [YouTube Video](https://www.youtube.com/watch?v=uXRwk2pALco)
 
-## Transcript
 
 **Introduction**
 
